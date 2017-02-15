@@ -109,7 +109,7 @@ theBalrog();
 function hornOfGondor() {
   // your answers here
   alert("the horn of gondor has been blown");
-  $($('.the-fellowship').children()[4]).detach();
+  $($('.the-fellowship').children()[4]).remove();
 
 }
 
@@ -118,21 +118,22 @@ hornOfGondor();
 function itsDangerousToGoAlone() {
   // your answers here
   $($('.the-fellowship').children()[5]).appendTo('#mordor');
-  $($('.the-fellowship').children()[4]).appendTo('#mordor');
 
+  $($('.the-fellowship').children()[4]).appendTo('#mordor')
   $('<div id="mount-doom"></div>').appendTo('#mordor');
 
 }
 
 itsDangerousToGoAlone();
 
+
 function weWantsIt() {
   // your answers here
   $('<div id="gollum"></div>').appendTo('#mordor');
-  $('#the-ring').remove($('.the-fellowship').children()[4]);
-  $('#gollum').append('#the-ring');
-  $($('.the-fellowship').children()[4]).appendTo('#mount-doom');
-
+  $($('#mordor').children()[2]).appendTo('#mount-doom');
+  $($('#mordor').children()[2]).remove('#the-ring');
+  $('#the-ring').appendTo('#gollum');
+  $('#gollum').appendTo('#mount-doom');
 
 }
 
@@ -140,6 +141,11 @@ weWantsIt();
 
 function thereAndBackAgain(){
   // your answers here
+$('#the-ring').remove();
+$('#gollum').remove();
+
+$('.hobbit').appendTo('#shire');
+
 }
 
 thereAndBackAgain();
